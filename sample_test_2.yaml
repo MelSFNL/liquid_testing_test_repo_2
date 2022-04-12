@@ -778,12 +778,12 @@ unit_5_show_prev_year_test_1:
       2018-12-31:
         accounts:
           WKprGrpGr1.000:
-            id: 12345678
+            id: 11111111
             value: -9999
       2019-12-31:
         accounts:
           WKprGrpGr1.000:
-            id: 99999999
+            id: 00000000
             value: -9999
         reconciliations:
           general_settings:
