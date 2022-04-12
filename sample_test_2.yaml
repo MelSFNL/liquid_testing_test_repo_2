@@ -1,0 +1,818 @@
+empty_state:
+  context:
+    locale: en
+    period: 2018-12-31
+  data:
+    company:
+      name: JAF Bende Holding B.V. (jaarrekening test)
+    periods:
+      2018-12-31:
+        reconciliations:
+          general_settings: {}
+          note_WKpr: {}
+  expectation:
+    reconciled: true
+    results: &zero_result_bp
+      WKprAkl_cy_value: 0.0
+      WKprAkl_py_value: 0.0
+      WKprAkv_cy_value: 0.0
+      WKprAkv_py_value: 0.0
+      WKprBtk_cy_value: 0.0
+      WKprBtk_py_value: 0.0
+      WKprGrp_cy_value: 0.0
+      WKprGrp_py_value: 0.0
+      WKprIna_cy_value: 0.0
+      WKprIna_py_value: 0.0
+      WKprInh_cy_value: 0.0
+      WKprInh_py_value: 0.0
+      WKprInp_cy_value: 0.0
+      WKprInp_py_value: 0.0
+      WKprKit_cy_value: 0.0
+      WKprKit_py_value: 0.0
+      WKprKra_cy_value: 0.0
+      WKprKra_py_value: 0.0
+      WKprKuw_cy_value: 0.0
+      WKprKuw_py_value: 0.0
+      WKprKvg_cy_value: 0.0
+      WKprKvg_py_value: 0.0
+      WKprKvp_cy_value: 0.0
+      WKprKvp_py_value: 0.0
+      WKprLeb_cy_value: 0.0
+      WKprLeb_py_value: 0.0
+      WKprMuo_cy_value: 0.0
+      WKprMuo_py_value: 0.0
+      WKprPrd_cy_value: 0.0
+      WKprPrd_py_value: 0.0
+      WKprPrg_cy_value: 0.0
+      WKprPrg_py_value: 0.0
+      WKprVom_cy_value: 0.0
+      WKprVom_py_value: 0.0
+      WKprOni_cy_value: 0.0
+      WKprOni_py_value: 0.0
+      WKprTvl_cy_value: 0.0
+      WKprTvl_py_value: 0.0
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      note_WKpr_text: ''
+      other_cy_value: 0.0
+      other_py_value: 0.0
+      current_year_to_display: '2018'
+      prev_year_to_display: '2017'
+    rollforward: &zero_rollforward_bp
+      current_choice.WKprAkl: null
+      current_choice.WKprAkv: null
+      current_choice.WKprBtk: null
+      current_choice.WKprGrp: null
+      current_choice.WKprIna: null
+      current_choice.WKprInh: null
+      current_choice.WKprInp: null
+      current_choice.WKprKit: null
+      current_choice.WKprKra: null
+      current_choice.WKprKuw: null
+      current_choice.WKprKvg: null
+      current_choice.WKprKvp: null
+      current_choice.WKprLeb: null
+      current_choice.WKprMuo: null
+      current_choice.WKprPrd: null
+      current_choice.WKprPrg: null
+      current_choice.WKprVom: null
+      current_choice.WKprOni: null
+      current_choice.WKprTvl: null
+      prev_choice.WKprAkl: null
+      prev_choice.WKprAkv: null
+      prev_choice.WKprBtk: null
+      prev_choice.WKprGrp: null
+      prev_choice.WKprIna: null
+      prev_choice.WKprInh: null
+      prev_choice.WKprInp: null
+      prev_choice.WKprKit: null
+      prev_choice.WKprKra: null
+      prev_choice.WKprKuw: null
+      prev_choice.WKprKvg: null
+      prev_choice.WKprKvp: null
+      prev_choice.WKprLeb: null
+      prev_choice.WKprMuo: null
+      prev_choice.WKprPrd: null
+      prev_choice.WKprPrg: null
+      prev_choice.WKprVom: null
+      prev_choice.WKprOni: null
+      prev_choice.WKprTvl: null
+
+# (1) account group unit is included in nl_aa_vars and nl_aa_notes_p1 58-59 and loosely matches the logic behind the 'big table'
+unit_1_account_group_test_1:
+  context:
+    locale: en
+    period: 2018-12-31
+  data:
+    periods:
+      2017-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -66943.95
+          WKprAkl.000:
+            id: 80000000
+            value: 1000
+      2018-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -20500
+          WKprAkl.000:
+            id: 80000000
+            value: 2000
+        reconciliations:
+          general_settings: {}
+  expectation:
+    reconciled: true
+    results:
+      <<: *zero_result_bp
+      WKprAkl_cy_value: 2000
+      WKprAkl_py_value: 1000
+      WKprGrp_cy_value: -20500.0
+      WKprGrp_py_value: -66944.0
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      note_WKpr_text: ''
+      other_cy_value: 0.0
+      other_py_value: 0.0
+      current_year_to_display: '2018'
+      prev_year_to_display: '2017'
+    rollforward:
+      <<: *zero_rollforward_bp
+      
+unit_1_account_group_test_2:
+  context:
+    locale: en
+    period: 2018-12-31
+  data:
+    periods:
+      2017-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -66943.95
+          WKprAkl.000:
+            id: 80000000
+            value: 1000
+      2018-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -20500
+          WKprAkl.000:
+            id: 80000000
+            value: 2000
+        reconciliations:
+          general_settings:
+            custom:
+              rounding.ofAcc: return_values_in_thousands
+  expectation:
+    reconciled: true
+    results:
+      <<: *zero_result_bp
+      WKprAkl_cy_value: 2
+      WKprAkl_py_value: 1
+      WKprGrp_cy_value: -21
+      WKprGrp_py_value: -67
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      note_WKpr_text: ''
+      other_cy_value: 0.0
+      other_py_value: 0.0
+      current_year_to_display: '2018'
+      prev_year_to_display: '2017'
+    rollforward:
+      <<: *zero_rollforward_bp
+
+unit_1_account_group_test_3:
+  context:
+    locale: en
+    period: 2018-12-31
+  data:
+    periods:
+      2017-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -66943.95
+          WKprAkl.000:
+            id: 80000000
+            value: 1000
+      2018-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -20500
+          WKprAkl.000:
+            id: 80000000
+            value: 2000
+        reconciliations:
+          general_settings:
+            custom:
+              rounding.ofAcc: return_values_in_ones
+          note_WKpr:
+            custom:    
+              WKprGrp.drilldown: true
+              choice.WKprMuo: Alternatieve omschrijving - Mutatie omzetvorderingen
+              choice2.WKprMuo: Alternative description - Movements in sales receivables
+              current_choice.WKprGrp: '24500.0'
+              current_choice.WKprLeb: '-5000.0'
+              prev_choice.WKprKuw: '3100.0'
+              prev_choice.WKprLeb: '4500.0'
+  expectation:
+    reconciled: false
+    results:
+      <<: *zero_result_bp
+      namespace_WKprGrp: ""
+      cy_spec_sub_value_WKprGrpGr1: -20500
+      py_spec_sub_value_WKprGrpGr1: -66944.0
+      WKprAkl_cy_value: 2000
+      WKprAkl_py_value: 1000
+      WKprGrp_cy_value: 24500.0
+      WKprGrp_py_value: -66944.0
+      WKprKuw_py_value: 3100.0
+      WKprLeb_cy_value: -5000.0
+      WKprLeb_py_value: 4500.0
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      other_cy_value: -40000.0
+      other_py_value: -7600.0
+      current_year_to_display: '2018'
+      prev_year_to_display: '2017'
+    rollforward:
+      <<: *zero_rollforward_bp
+      current_choice.local_current_85315173: null
+      prev_choice.local_prev_85315173: null
+
+unit_1_account_group_test_4:
+  context:
+    locale: en
+    period: 2018-12-31
+  data:
+    periods:
+      2017-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -66943.95
+          WKprAkl.000:
+            id: 80000000
+            value: 1000
+      2018-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -20500
+          WKprAkl.000:
+            id: 80000000
+            value: 2000
+        reconciliations:
+          general_settings:
+            custom:
+              rounding.ofAcc: return_values_in_thousands
+              sorting.amount_or_rgs: rgs
+          note_WKpr:
+            custom:
+              WKprGrp.drilldown: true
+              choice.WKprMuo: Alternatieve omschrijving - Mutatie omzetvorderingen
+              choice2.WKprMuo: Alternative description - Movements in sales receivables
+              current_choice.WKprGrp: '24500.0'
+              current_choice.WKprLeb: '-5000.0'
+              prev_choice.WKprKuw: '3100.0'
+              prev_choice.WKprLeb: '4500.0'
+  expectation:
+    reconciled: false
+    results:
+      <<: *zero_result_bp
+      namespace_WKprGrp: ""
+      cy_spec_sub_value_WKprGrpGr1: -21
+      py_spec_sub_value_WKprGrpGr1: -67
+      WKprAkl_cy_value: 2
+      WKprAkl_py_value: 1
+      WKprGrp_cy_value: 24500
+      WKprGrp_py_value: -67
+      WKprKuw_py_value: 3100
+      WKprLeb_cy_value: -5000.0
+      WKprLeb_py_value: 4500
+      other_cy_value: -19521
+      other_py_value: -7600
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      note_WKpr_text: ''
+      current_year_to_display: '2018'
+      prev_year_to_display: '2017'
+    rollforward:
+      <<: *zero_rollforward_bp
+      current_choice.local_current_85315173: null
+      prev_choice.local_prev_85315173: null
+
+unit_1_account_group_test_5:
+  context:
+    locale: en
+    period: 2018-12-31
+  data:
+    periods:
+      2017-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -66943.95
+          WKprAkl.000:
+            id: 80000000
+            value: 1000
+      2018-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -20500
+          WKprAkl.000:
+            id: 80000000
+            value: 2000
+        reconciliations:
+          general_settings:
+            custom:
+              rounding.ofAcc: return_values_in_thousands
+              sorting.amount_or_rgs: amount
+          note_WKpr:
+            custom:
+              WKprGrp.drilldown: true
+              choice.WKprMuo: Alternatieve omschrijving - Mutatie omzetvorderingen
+              choice2.WKprMuo: Alternative description - Movements in sales receivables
+              current_choice.WKprGrp: '24500.0'
+              current_choice.WKprLeb: '-5000.0'
+              prev_choice.WKprKuw: '3100.0'
+              prev_choice.WKprLeb: '4500.0'
+  expectation:
+    reconciled: false
+    results:
+      <<: *zero_result_bp
+      namespace_WKprGrp: ""
+      cy_spec_sub_value_WKprGrpGr1: -21
+      py_spec_sub_value_WKprGrpGr1: -67
+      WKprAkl_cy_value: 2
+      WKprAkl_py_value: 1
+      WKprGrp_cy_value: 24500
+      WKprGrp_py_value: -67
+      WKprKuw_py_value: 3100
+      WKprLeb_cy_value: -5000.0
+      WKprLeb_py_value: 4500
+      other_cy_value: -19521
+      other_py_value: -7600
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      note_WKpr_text: ''
+      current_year_to_display: '2018'
+      prev_year_to_display: '2017'
+    rollforward:
+      <<: *zero_rollforward_bp
+      current_choice.local_current_85315173: null
+      prev_choice.local_prev_85315173: null
+
+
+# (2) broken bookyear unit is found in nl_aa_vars 114-158
+# First test: 'regular' broken year
+unit_2_broken_bookyears_test_1:
+  context:
+    locale: en
+    period: 2018-06-30
+  data:
+    special_book_years:
+      2016-07-01: 2017-06-30
+      2017-07-01: 2018-06-30
+    periods: &period_settings_bp
+      2017-06-30:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -66943.95
+      2018-06-30:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -20500
+        reconciliations:
+          general_settings:
+            custom:
+              rounding.ofAcc: return_values_in_thousands
+  expectation:
+    reconciled: true
+    results:
+      <<: *zero_result_bp
+      WKprGrp_cy_value: -21
+      WKprGrp_py_value: -67
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      note_WKpr_text: ''
+      other_cy_value: 0.0
+      other_py_value: 0.0
+      current_year_to_display: '2017-2018'
+      prev_year_to_display: '2016-2017'
+    rollforward:
+      <<: *zero_rollforward_bp
+
+# Second test: shortened broken years
+unit_2_broken_bookyears_test_2:
+  context:
+    locale: en
+    period: 2018-06-30
+  data:
+    special_book_years:
+      2016-10-01: 2017-06-30
+      2017-07-01: 2018-12-31
+    periods:
+      <<: *period_settings_bp
+  expectation:
+    reconciled: true
+    results:
+      <<: *zero_result_bp
+      WKprGrp_cy_value: -21
+      WKprGrp_py_value: -67
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      note_WKpr_text: ''
+      other_cy_value: 0.0
+      other_py_value: 0.0
+      current_year_to_display: '2017-2018'
+      prev_year_to_display: '2016-2017'
+    rollforward:
+      <<: *zero_rollforward_bp
+
+# Third test: prolonged broken years
+unit_2_broken_bookyears_test_3:
+  context:
+    locale: en
+    period: 2018-06-30
+  data:
+    special_book_years:
+      2016-01-01: 2017-06-30
+      2017-07-01: 2019-12-31
+    periods:
+      <<: *period_settings_bp
+  expectation:
+    reconciled: true
+    results:
+      <<: *zero_result_bp
+      WKprGrp_cy_value: -21
+      WKprGrp_py_value: -67
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      note_WKpr_text: ''
+      other_cy_value: 0.0
+      other_py_value: 0.0
+      current_year_to_display: '2017-2019'
+      prev_year_to_display: '2016-2017'
+    rollforward:
+      <<: *zero_rollforward_bp
+
+# (3) export language scenarios unit is located in nl_aa_notes_p1
+unit_3_language_test_1:
+  context:
+    locale: en
+    period: 2018-12-31
+  data:
+    periods:
+      2017-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -66943.95
+      2018-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -20500
+        reconciliations:
+          general_settings:
+            custom: 
+              rounding.ofAcc: 'return_values_in_ones'
+            results:
+              grondslage_table: 'double_table'
+              grondslagen_export: 'Eng'
+          note_WKpr:
+            custom:
+              WKprGrp.drilldown: true
+              namespace_WKprGrp.namespace_WKprGrp_1:
+                additional_text_provided_nl: 'Liquid testing NL'
+                additional_text_provided_en: 'Liquid testing EN'
+              namespace_WKprGrp.namespace_WKprGrp_2:
+                additional_text_provided_nl: 'Liquid testing NL (2)'
+                additional_text_provided_en: 'Liquid testing EN (2)'
+              toeli.others: 'Alternatieve omschrijving overige'
+              toeli2.others: 'Alternative description others'
+  expectation:
+    reconciled: true
+    results:
+      <<: *zero_result_bp
+      WKprGrp_cy_value: -20500.0
+      WKprGrp_py_value: -66944.0
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      other_cy_value: 0.0
+      other_py_value: 0.0
+      current_year_to_display: '2018'
+      prev_year_to_display: '2017'
+      namespace_WKprGrp: "Liquid testing EN Liquid testing EN (2) "
+      cy_spec_sub_value_WKprGrpGr1: -20500.0
+      py_spec_sub_value_WKprGrpGr1: -66944.0
+    rollforward:
+      <<: *zero_rollforward_bp
+      current_choice.local_current_85315173: null
+      prev_choice.local_prev_85315173: null
+
+unit_3_language_test_2:
+  context:
+    locale: en
+    period: 2018-12-31
+  data:
+    periods:
+      2017-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -66943.95
+      2018-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -20500
+        reconciliations:
+          general_settings:
+            custom: 
+              rounding.ofAcc: 'return_values_in_ones'
+            results:
+              grondslage_table: 'double_table'
+              grondslagen_export: 'Ned'
+          note_WKpr:
+            custom:
+              WKprGrp.drilldown: true
+              namespace_WKprGrp.namespace_WKprGrp_1:
+                additional_text_provided_nl: 'Liquid testing NL'
+                additional_text_provided_en: 'Liquid testing EN'
+              namespace_WKprGrp.namespace_WKprGrp_2:
+                additional_text_provided_nl: 'Liquid testing NL (2)'
+                additional_text_provided_en: 'Liquid testing EN (2)'
+              toeli.others: 'Alternatieve omschrijving overige'
+              toeli2.others: 'Alternative description others'
+  expectation:
+    reconciled: true
+    results:
+      <<: *zero_result_bp
+      WKprGrp_cy_value: -20500.0
+      WKprGrp_py_value: -66944.0
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      other_cy_value: 0.0
+      other_py_value: 0.0
+      current_year_to_display: '2018'
+      prev_year_to_display: '2017'
+      namespace_WKprGrp: "Liquid testing NL Liquid testing NL (2) "
+      cy_spec_sub_value_WKprGrpGr1: -20500.0
+      py_spec_sub_value_WKprGrpGr1: -66944.0
+    rollforward:
+      <<: *zero_rollforward_bp
+      current_choice.local_current_85315173: null
+      prev_choice.local_prev_85315173: null
+
+unit_3_language_test_3:
+  context:
+    locale: en
+    period: 2020-12-31
+  data:
+    periods:
+      2019-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: 5000
+      2020-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: 2500
+        reconciliations:
+          general_settings:
+            custom: 
+              rounding.ofAcc: 'return_values_in_ones'
+            results:
+              grondslage_table: 'single_table'
+          note_WKpr:
+            custom:
+              WKprGrp.drilldown: true
+              namespace_WKprGrp.namespace_WKprGrp_1:
+                additional_text_provided_nl: 'Liquid testing NL'
+                additional_text_provided_en: 'Liquid testing EN'
+              namespace_WKprGrp.namespace_WKprGrp_2:
+                additional_text_provided_nl: 'Liquid testing NL (2)'
+                additional_text_provided_en: 'Liquid testing EN (2)'
+              toeli.others: 'Alternatieve omschrijving overige'
+  expectation:
+    reconciled: true
+    results:
+      <<: *zero_result_bp
+      WKprGrp_cy_value: 2500
+      WKprGrp_py_value: 5000
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      other_cy_value: 0.0
+      other_py_value: 0.0
+      current_year_to_display: '2020'
+      prev_year_to_display: '2019'
+      namespace_WKprGrp: "Liquid testing NL Liquid testing NL (2) "
+      cy_spec_sub_value_WKprGrpGr1: 2500
+      py_spec_sub_value_WKprGrpGr1: 5000
+    rollforward:
+      <<: *zero_rollforward_bp
+      current_choice.local_current_85315173: null
+      prev_choice.local_prev_85315173: null
+
+# (4) Show or hide previous year column
+unit_4_show_prev_year_test_1:
+  context:
+    locale: en
+    period: 2019-12-31
+  data:
+    periods:
+      2019-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -20500
+        reconciliations:
+          general_settings:
+            custom: 
+              rounding.ofAcc: 'return_values_in_ones'
+            results:
+              grondslage_table: 'double_table'
+              grondslagen_export: 'Eng'
+  expectation:
+    reconciled: true
+    results:
+      <<: *zero_result_bp
+      WKprGrp_cy_value: -20500.0
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      other_cy_value: 0.0
+      current_year_to_display: '2019'
+      prev_year_to_display: '2018'
+    rollforward:
+      <<: *zero_rollforward_bp
+
+unit_4_show_prev_year_test_2:
+  context:
+    locale: en
+    period: 2019-12-31
+  data:
+    periods:
+      2018-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -66943.95
+      2019-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -20500
+        reconciliations:
+          general_settings:
+            custom: 
+              rounding.ofAcc: 'return_values_in_ones'
+            results:
+              grondslage_table: 'double_table'
+              grondslagen_export: 'Eng'
+          note_WKpr:
+            custom:
+              check.prev_year: null
+  expectation:
+    reconciled: true
+    results:
+      <<: *zero_result_bp
+      WKprGrp_cy_value: -20500.0
+      WKprGrp_py_value: -66944.0
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      other_cy_value: 0.0
+      other_py_value: 0.0
+      current_year_to_display: '2019'
+      prev_year_to_display: '2018'
+    rollforward:
+      <<: *zero_rollforward_bp
+
+unit_4_show_prev_year_test_3:
+  context:
+    locale: en
+    period: 2019-12-31
+  data:
+    periods:
+      2018-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -66943.95
+      2019-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -20500
+        reconciliations:
+          general_settings:
+            custom: 
+              rounding.ofAcc: 'return_values_in_ones'
+            results:
+              grondslage_table: 'double_table'
+              grondslagen_export: 'Eng'
+          note_WKpr:
+            custom:
+              check.prev_year: false
+  expectation:
+    reconciled: true
+    results:
+      <<: *zero_result_bp
+      WKprGrp_cy_value: -20500.0
+      WKprGrp_py_value: -66944.0
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      other_cy_value: 0.0
+      current_year_to_display: '2019'
+      prev_year_to_display: '2018'
+    rollforward:
+      <<: *zero_rollforward_bp
+
+# (5) Specification of account groups
+unit_5_show_prev_year_test_1:
+  context:
+    locale: en
+    period: 2019-12-31
+  data:
+    periods:
+      2018-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -66943.95
+      2019-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -20500
+        reconciliations:
+          general_settings:
+            custom: 
+              rounding.ofAcc: 'return_values_in_ones'
+            results:
+              grondslage_table: 'double_table'
+              grondslagen_export: 'Eng'
+          note_WKpr:
+            custom:
+              WKprGrp.drilldown: true
+              check.prev_year: true
+  expectation:
+    reconciled: true
+    results:
+      <<: *zero_result_bp
+      WKprGrp_cy_value: -20500.0
+      WKprGrp_py_value: -66944.0
+      cy_spec_sub_value_WKprGrpGr1: -20500.0
+      namespace_WKprGrp: ''
+      py_spec_sub_value_WKprGrpGr1: -66944.0
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      other_cy_value: 0.0
+      current_year_to_display: '2019'
+      prev_year_to_display: '2018'
+    rollforward:
+      <<: *zero_rollforward_bp
+      current_choice.local_current_85315173: null
+      prev_choice.local_prev_85315173: null
+
+unit_5_show_prev_year_test_2:
+  context:
+    locale: en
+    period: 2019-12-31
+  data:
+    periods:
+      2018-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -9999
+      2019-12-31:
+        accounts:
+          WKprGrpGr1.000:
+            id: 85315173
+            value: -9999
+        reconciliations:
+          general_settings:
+            custom: 
+              rounding.ofAcc: 'return_values_in_ones'
+            results:
+              grondslage_table: 'double_table'
+              grondslagen_export: 'Eng'
+          note_WKpr:
+            custom:
+              WKprGrp.drilldown: true
+              check.prev_year: true
+              current_choice.local_current_85315173: '4250.0'
+              prev_choice.local_prev_85315173: '-50000.0'
+  expectation:
+    reconciled: false
+    results:
+      <<: *zero_result_bp
+      WKprGrp_cy_value: -9999.0
+      WKprGrp_py_value: -9999.0
+      cy_spec_sub_value_WKprGrpGr1: 4250.0
+      namespace_WKprGrp: ''
+      py_spec_sub_value_WKprGrpGr1: -50000.0
+      array: [WKprKvg, WKprKvp, WKprKuw, WKprAkl, WKprIna, WKprAkv, WKprKra, WKprInh, WKprInp, WKprLeb, WKprBtk, WKprKit, WKprMuo, WKprVom, WKprPrg, WKprPrd, WKprGrp, WKprOni, WKprTvl]
+      other_cy_value: 0.0
+      current_year_to_display: '2019'
+      prev_year_to_display: '2018'
+    rollforward:
+      <<: *zero_rollforward_bp
+      current_choice.local_current_85315173: null
+      prev_choice.local_prev_85315173: null

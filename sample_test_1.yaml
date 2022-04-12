@@ -1,0 +1,59 @@
+sample_test_1:
+  context:
+    period: 2016-12-31
+  data:
+    periods:
+      2016-12-31:
+        accounts:
+          BVorDeb.000:
+            value: 329979.6
+        reconciliations: 
+          liquid_testing_showcase:
+            custom:
+              item.first_suffix: "0.2"
+              item.second_suffix: "50000.0"
+              item.third_suffix: "110500.0"
+  expectation:
+    reconciled: true
+    results:
+      calculated_variable: 126495.92
+
+sample_test_2:
+  context:
+    period: 2016-12-31
+  data:
+    periods:
+      2016-12-31:
+        accounts:
+          BVorDeb.000:
+            value: 1000
+        reconciliations: 
+          liquid_testing_showcase:
+            custom:
+              item.first_suffix: "1"
+              item.second_suffix: "500"
+              item.third_suffix: "-500"
+  expectation:
+    reconciled: true
+    results:
+      calculated_variable: 0
+      
+sample_test_3:
+  context:
+    period: 2016-12-31
+  data:
+    periods:
+      2016-12-31:
+        accounts:
+          BVorDeb.000:
+            value: 1000
+        reconciliations: 
+          liquid_testing_showcase:
+            custom:
+              item.first_suffix: "1"
+              item.second_suffix: "500"
+              item.third_suffix: "-500"
+  expectation:
+    reconciled: true
+    results:
+      calculated_variable: 0
