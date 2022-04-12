@@ -778,12 +778,12 @@ unit_5_show_prev_year_test_1:
       2018-12-31:
         accounts:
           WKprGrpGr1.000:
-            id: 85315173
+            id: 12345678
             value: -9999
       2019-12-31:
         accounts:
           WKprGrpGr1.000:
-            id: 85315173
+            id: 99999999
             value: -9999
         reconciliations:
           general_settings:
@@ -799,7 +799,7 @@ unit_5_show_prev_year_test_1:
               current_choice.local_current_85315173: '4250.0'
               prev_choice.local_prev_85315173: '-50000.0'
   expectation:
-    reconciled: false
+    reconciled: true
     results:
       <<: *zero_result_bp
       WKprGrp_cy_value: -9999.0
